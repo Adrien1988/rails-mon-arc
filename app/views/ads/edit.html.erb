@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Modifier une annonce</h1>
+    <%= simple_form_for(@ad) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :equipment %>
+      <%= f.input :price %>
+      <%= f.input :state %>
+      <%= f.input :description %>
+      <%= f.input :location %>
+      <%= f.submit %>
+    <% end %>
+</div>
