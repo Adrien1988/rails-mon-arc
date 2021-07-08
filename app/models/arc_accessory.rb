@@ -1,0 +1,2 @@
+class ArcAccessory < ApplicationRecord
+end
