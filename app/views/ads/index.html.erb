@@ -2,6 +2,6 @@
 
 <ul>
   <% @ads.each do |ad| %>
-    <li><%= ad.title %></li>
+    <li><%= link_to ad.title, ad_path(ad) %></li>
   <% end %>
 </ul>

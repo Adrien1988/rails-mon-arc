@@ -2,5 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :ads
+  resources :ads do
+    resources :arcs, :arrows, :arc_accessories, only: [:new, :create, :edit, :update]
+    # resources :arrows, only: [:new, :create, :edit, :update]
+    # resources :arc_accessories, only: [:new, :create, :edit, :update]
+  end
+
+  resources :arcs, :arrows, :arc_accessories, only: [:destroy]
 end
