@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_29_212936) do
+ActiveRecord::Schema.define(version: 2021_07_08_073124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,40 @@ ActiveRecord::Schema.define(version: 2021_06_29_212936) do
     t.string "location"
     t.float "latitude"
     t.float "longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.bigint "arc_id"
+    t.bigint "arrow_id"
+    t.bigint "arc_accessory_id"
+    t.index ["arc_accessory_id"], name: "index_ads_on_arc_accessory_id"
+    t.index ["arc_id"], name: "index_ads_on_arc_id"
+    t.index ["arrow_id"], name: "index_ads_on_arrow_id"
+    t.index ["user_id"], name: "index_ads_on_user_id"
+  end
+
+  create_table "arc_accessories", force: :cascade do |t|
+    t.string "accessory_name"
+    t.string "mark"
+    t.string "matter"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "arcs", force: :cascade do |t|
+    t.string "mark"
+    t.integer "power"
+    t.integer "waist"
+    t.string "matter"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "arrows", force: :cascade do |t|
+    t.string "mark"
+    t.integer "rigidity"
+    t.integer "length"
+    t.string "matter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,4 +75,8 @@ ActiveRecord::Schema.define(version: 2021_06_29_212936) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ads", "arc_accessories"
+  add_foreign_key "ads", "arcs"
+  add_foreign_key "ads", "arrows"
+  add_foreign_key "ads", "users"
 end

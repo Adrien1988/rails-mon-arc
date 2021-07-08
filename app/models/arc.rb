@@ -1,0 +1,2 @@
+class Arc < ApplicationRecord
+end
