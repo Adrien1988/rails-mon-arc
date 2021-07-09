@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Créer une nouvelle annonce</h1>
     <%= simple_form_for(@ad) do |f| %>
-      <%= f.input :title %>
+      <%= f.input :title, label: "Titre de l'annonce", placeholder: "Arc classic....." %>
       <%= f.input :equipment %>
       <%= f.input :price %>
       <%= f.input :state %>
