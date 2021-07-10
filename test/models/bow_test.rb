@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ArcAccessoryTest < ActiveSupport::TestCase
+class BowTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
