@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :bows, :arrows, :bow_accessories, only: [:destroy]
+
+  get "my_account", to: "my_accounts#show", as: :my_account
 end
