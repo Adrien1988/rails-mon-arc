@@ -20,7 +20,7 @@
       <%= f.input :location, 
                   label: "Lieux", 
                   placeholder: "1 rue de la republique, Paris 75000" %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit %>
     <% end %>
 </div>

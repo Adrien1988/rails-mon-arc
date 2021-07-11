@@ -1,4 +1,8 @@
-<div class="container"></div>
+<div class="container">
+  <% @ad.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+
   <h2><%= @ad.title %></h2>
     <p><%= @ad.equipment %></p>
     <p><%= @ad.price %></p>
