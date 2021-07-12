@@ -27,16 +27,16 @@ ActiveRecord::Schema.define(version: 2021_07_08_073124) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.bigint "arc_id"
+    t.bigint "bow_id"
     t.bigint "arrow_id"
-    t.bigint "arc_accessory_id"
-    t.index ["arc_accessory_id"], name: "index_ads_on_arc_accessory_id"
-    t.index ["arc_id"], name: "index_ads_on_arc_id"
+    t.bigint "bow_accessory_id"
+    t.index ["bow_accessory_id"], name: "index_ads_on_bow_accessory_id"
+    t.index ["bow_id"], name: "index_ads_on_bow_id"
     t.index ["arrow_id"], name: "index_ads_on_arrow_id"
     t.index ["user_id"], name: "index_ads_on_user_id"
   end
 
-  create_table "arc_accessories", force: :cascade do |t|
+  create_table "bow_accessories", force: :cascade do |t|
     t.string "accessory_name"
     t.string "mark"
     t.string "matter"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_07_08_073124) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "arcs", force: :cascade do |t|
+  create_table "bows", force: :cascade do |t|
     t.string "mark"
     t.integer "power"
     t.integer "waist"
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(version: 2021_07_08_073124) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "ads", "arc_accessories"
-  add_foreign_key "ads", "arcs"
+  add_foreign_key "ads", "bow_accessories"
+  add_foreign_key "ads", "bows"
   add_foreign_key "ads", "arrows"
   add_foreign_key "ads", "users"
 end
