@@ -5,12 +5,4 @@
     <p><%= @ad.state %></p>
     <p><%= @ad.description %></p>
     <p><%= @ad.location %></p>
-    <%= link_to "Modifier #{@ad.title}",
-                edit_ad_path(@ad),
-                method: :edit
-              %>
-    <%= link_to "Suprimer #{@ad.title}",
-                ad_path(@ad),
-                method: :delete,
-                data: { confirm: "Êtes-vous sûr?" } %>
 </div>
