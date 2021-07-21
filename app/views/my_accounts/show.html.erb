@@ -6,7 +6,7 @@
   <h3>Mes annonces</h3>
     <ul>
       <% @ads.each do |ad| %>
-        <li><%= ad.title %> - <%= ad.equipment %> - <%= ad.price %> - <%= ad.state %> - <%= ad.description %> - <%= ad.location %>
+        <li><%= ad.title %> - <%= ad.equipment %> - <%= ad.price %> - <%= ad.state %> - <%= ad.description %> - <%= ad.address %>
         <%= link_to "Modifier #{@ad.title}",
                 edit_ad_path(@ad),
                 method: :edit
