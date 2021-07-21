@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2021_07_11_142206) do
     t.integer "price"
     t.string "state"
     t.text "description"
-    t.string "location"
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false

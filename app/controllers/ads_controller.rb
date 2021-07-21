@@ -4,6 +4,12 @@ class AdsController < ApplicationController
 
   def index
     @ads = policy_scope(Ad)
+    @markers = @ads.geocoded.map do |ad|
+      {
+        lat: ad.latitude,
+        lng: ad.longitude
+      }
+    end
   end
 
   def show
@@ -46,6 +52,6 @@ class AdsController < ApplicationController
   end
 
   def ad_params
-    params.require(:ad).permit(:title, :equipment, :price, :state, :description, :location, photos: [])
+    params.require(:ad).permit(:title, :equipment, :price, :state, :description, :address, photos: [])
   end
 end
