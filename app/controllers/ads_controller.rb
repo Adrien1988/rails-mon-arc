@@ -25,7 +25,7 @@ class AdsController < ApplicationController
     @ad.user = current_user
     authorize @ad
     if @ad.save
-      redirect_to ad_path(@ad), notice: "Votre annonce a été créée avec succès."
+      redirect_to ad_path(@ad)
     else
       render :new
     end
