@@ -5,6 +5,8 @@ class BowsController < ApplicationController
 
   def create
     @bow = Bow.new(bow_params)
+    @ad = Ad.find(params([:ad_id]))
+    @bow.ad = @ad
     if @bow.save
       redirect_to ad_path(@ad), notice: "Votre annonce a été créée avec succès."
     else
