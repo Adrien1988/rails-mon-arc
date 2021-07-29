@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Informations de l'Arc</h2>
+
+  <%= simple_form_for do |f| %>
+    <%= f.input :mark,
+                label: "Marque de l'arc",
+                placeholder: "Hoyt" %>
+    <%= f.input :power,
+                label: "Puissance de l'arc",
+                placeholder: "30 livres" %>
+    <%= f.input :waist,
+                label: "Taille de l'arc",
+                placeholder: "70 pouces" %>
+    <%= f.input :matter,
+                label: "Matière de l'arc" %>
+    <%= f.submit "Créer l'annonce", class: 'btn btn-primary' %>
+  <% end %>
+</div>
